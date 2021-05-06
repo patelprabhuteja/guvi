@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="w-100 h-100 bg-dark d-flex justify-content-center">
+    <!-- 
+        Input Field to get Task
+        Submit Button to save Task
+        Store tasks in Local Variable
+        Feature to rearrange task based on user priority
+        Design should be responsive and compatible withall devices
+        Application should have good UI/UX
+        Use HTML5 Semantic Elements
+    -->
+    <div class="app" style="width: 95%;">
+        <nav class="navbar navbar-expand-sm">
+            <a href="#" class="navbar-brand">Todo Application</a>
+            <ul class="nav nav-pills ms-auto">
+                <li class="nav-item">
+                    <button class="btn btn-secondary mx-2" id="toggleSort">Sort By Less Priority</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn text-white btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#add">Add a Todo</button>
+                </li>
+            </ul>
+        </nav>
+        <div class="container-fluid my-3 box">
+            <div class="input-group">
+                <input type="text" id="search" class="form-control" placeholder="Search Todo's">
+            </div>
+            <div class="tasks"></div>
+        </div>
+        <div class="modal fade" id="add" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Todo</h5>
+                        <button type="button" id="close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="block">
+                            <label for="todoTitle">
+                                Enter Todo
+                            </label>
+                            <input class="form-control" type="text" id="todoTitle">
+                        </div>
+                        <div class="block">
+                            <label for="todoPriority">
+                                What's the priority of the Todo?
+                            </label>
+                            <br/>
+                            <input class="form-range" type="range" id="todoPriority">
+                            <input class="form-control" type="text" id="priorityPer" disabled value="50%">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button id="addBtn" class="btn btn-success">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/23ee58b93c.js" crossorigin="anonymous"></script>
+</body>
+</html>
